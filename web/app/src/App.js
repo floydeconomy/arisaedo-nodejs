@@ -1,5 +1,5 @@
-import React from "react";
-import { useAragonApi } from "@aragon/api-react";
+import React from 'react'
+import { useAragonApi } from '@aragon/api-react'
 import {
   Box,
   Button,
@@ -9,14 +9,20 @@ import {
   IconPlus,
   Main,
   SyncIndicator,
+  Tabs,
   Text,
-  textStyle
-} from "@aragon/ui";
+  textStyle,
+} from '@aragon/ui'
+import styled from 'styled-components'
 
 function App() {
-  const { api, appState } = useAragonApi();
-  const { count, isSyncing } = appState;
-  const step = 2;
+  const { api, appState, path, requestPath } = useAragonApi()
+  const { count, isSyncing } = appState
+
+  const pathParts = path.match(/^\/tab\/([0-9]+)/)
+  const pageIndex = Array.isArray(pathParts)
+    ? parseInt(pathParts[1], 10) - 1
+    : 0
 
   return (
     <Main>
@@ -26,12 +32,17 @@ function App() {
         secondary={
           <Text
             css={`
-              ${textStyle("title2")}
+              ${textStyle('title2')}
             `}
           >
             {count}
           </Text>
         }
+      />
+      <Tabs
+        items={['Tab 1', 'Tab 2']}
+        selected={pageIndex}
+        onChange={index => requestPath(`/tab/${index + 1}`)}
       />
       <Box
         css={`
@@ -40,30 +51,37 @@ function App() {
           justify-content: center;
           text-align: center;
           height: ${50 * GU}px;
-          ${textStyle("title3")};
+          ${textStyle('title3')};
         `}
       >
         Count: {count}
-        <div>
+        <Buttons>
           <Button
             display="icon"
             icon={<IconMinus />}
             label="Decrement"
-            onClick={() => api.decrement(step).toPromise()}
+            onClick={() => api.decrement(1).toPromise()}
           />
           <Button
             display="icon"
             icon={<IconPlus />}
             label="Increment"
-            onClick={() => api.increment(step).toPromise()}
+            onClick={() => api.increment(1).toPromise()}
             css={`
               margin-left: ${2 * GU}px;
             `}
           />
-        </div>
+        </Buttons>
       </Box>
     </Main>
-  );
+  )
 }
 
-export default App;
+const Buttons = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 40px;
+  margin-top: 20px;
+`
+
+export default App

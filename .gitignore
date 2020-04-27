@@ -105,7 +105,11 @@ dist
 
 # Extras
 yarn.lock
-artifacts
+package-lock.json
+
+# Aragon
+artifacts/
 .cache
 cache
-dist
+dist/
+ipfs.cmd

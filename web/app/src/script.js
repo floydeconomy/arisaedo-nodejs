@@ -1,4 +1,3 @@
-// app/src/script.js
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 import Aragon, { events } from '@aragon/api'
@@ -34,7 +33,9 @@ app.store(
 )
 
 /***********************
+ *                     *
  *   Event Handlers    *
+ *                     *
  ***********************/
 
 function initializeState() {
@@ -47,7 +48,5 @@ function initializeState() {
 }
 
 async function getValue() {
-  // Get current value from the contract by calling the public getter
-  // app.call() returns a single-emission observable that we can immediately turn into a promise
   return parseInt(await app.call('value').toPromise(), 10)
 }

@@ -1,4 +1,3 @@
-// app/src/index.js
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { AragonApi } from '@aragon/api-react'

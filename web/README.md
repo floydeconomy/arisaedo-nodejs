@@ -1,13 +1,13 @@
-# Aragon Buidler Boilerplate
+# Arisaedo: Web Application
+
+## Aragon
+This implementation is based on the Aragon DAO and Kernal. Hence, please refer to these links for some detail on the base implementation used.
 
 > 🕵️ [Find more boilerplates using GitHub](https://github.com/search?q=topic:aragon-boilerplate) |
-> ✨ [Official boilerplates](https://github.com/search?q=topic:aragon-boilerplate+org:aragon)
-
-> ▶️ To use this boilerplate, run `npx create-aragon-app <app-name>`
 
 Buidler + React boilerplate for Aragon applications.
 
-## Running your app
+### Running your app
 
 To run the app in a browser with frontend and contract hot-reloading, simply run `npm start`.
 
@@ -16,9 +16,9 @@ To run the app in a browser with frontend and contract hot-reloading, simply run
 3. Develop your [frontend](https://ui.aragon.org/getting-started/)
 4. [Publish](https://hack.aragon.org/docs/guides-publish)!
 
-## What's in this boilerplate?
+### What's in this?
 
-### npm Scripts
+#### npm Scripts
 
 - **postinstall**: Runs after installing dependencies.
 - **build-app**: Installs front end project (app/) dependencies.
@@ -29,7 +29,7 @@ To run the app in a browser with frontend and contract hot-reloading, simply run
 - **publish:minor**: Releases a minor version to aragonPM.
 - **publish:patch**: Releases a patch version to aragonPM.
 
-### Hooks
+#### Hooks
 
 These hooks are called by the Aragon Buidler plugin during the start task's lifecycle. Use them to perform custom tasks at certain entry points of the development build process, like deploying a token before a proxy is initialized, etc.
 
@@ -59,7 +59,7 @@ getInitParams: async ({ log }, { web3, artifacts }) => {
 
 If you want an example of how to use these hooks, please see the [plugin's own tests for an example project](https://github.com/aragon/buidler-aragon/blob/master/test/projects/token-wrapper/scripts/hooks.js).
 
-## Structure
+### Structure
 
 This boilerplate has the following structure:
 
@@ -88,7 +88,7 @@ root
 - [**buidler.config.js**](https://buidler.dev/config/): Buidler configuration file.
 - [**package.json**](https://docs.npmjs.com/creating-a-package-json-file): Main npm configuration file.
 
-### Libraries
+#### Libraries
 
 - [**@aragon/os**](https://github.com/aragon/aragonos): AragonApp smart contract interfaces.
 - [**@aragon/api**](https://github.com/aragon/aragon.js/tree/master/packages/aragon-api): Aragon client application API.
