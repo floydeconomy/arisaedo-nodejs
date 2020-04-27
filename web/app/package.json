@@ -15,8 +15,10 @@
     "@babel/core": "^7.8.4",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
+    "babel-plugin-styled-components": "^1.10.7",
     "copyfiles": "^2.2.0",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "styled-components": ">= 2"
   },
   "scripts": {
     "build": "yarn sync-assets && yarn build:app && yarn build:script",
