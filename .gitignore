@@ -105,3 +105,7 @@ dist
 
 # Extras
 yarn.lock
+artifacts
+.cache
+cache
+dist
