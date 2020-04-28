@@ -1,13 +1,8 @@
 {
   "roles": [
     {
-      "name": "Increment the counter",
-      "id": "INCREMENT_ROLE",
-      "params": []
-    },
-    {
-      "name": "Decrement the counter",
-      "id": "DECREMENT_ROLE",
+      "name": "Contributer of COVID-19 data",
+      "id": "CONTRIBUTER_ROLE",
       "params": []
     }
   ],
@@ -33,5 +28,5 @@
     }
   },
   "appName": "web.aragonpm.eth",
-  "path": "contracts/CounterApp.sol"
+  "path": "contracts/Store.sol"
 }
