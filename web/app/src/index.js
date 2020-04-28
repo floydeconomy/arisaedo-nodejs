@@ -3,13 +3,19 @@ import ReactDOM from 'react-dom'
 import { AragonApi } from '@aragon/api-react'
 import App from './App'
 
+// States
 const reducer = state => {
   if (state === null) {
-    return { count: 0, isSyncing: true }
+    return {
+       name: "",
+       identifier: "",
+       isSyncing: true
+     }
   }
   return state
 }
 
+// Render
 ReactDOM.render(
   <AragonApi reducer={reducer}>
     <App />

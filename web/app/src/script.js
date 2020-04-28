@@ -10,12 +10,11 @@ app.store(
       ...state,
     }
 
+
     try {
       switch (event) {
-        case 'Increment':
-          return { ...nextState, count: await getValue() }
-        case 'Decrement':
-          return { ...nextState, count: await getValue() }
+        case 'Contribute':
+          return { ...nextState, identifier: "dafuq" }
         case events.SYNC_STATUS_SYNCING:
           return { ...nextState, isSyncing: true }
         case events.SYNC_STATUS_SYNCED:
@@ -42,11 +41,21 @@ function initializeState() {
   return async cachedState => {
     return {
       ...cachedState,
-      count: await getValue(),
+      identifier: "1",
+      name: "covid"
     }
   }
 }
 
-async function getValue() {
-  return parseInt(await app.call('value').toPromise(), 10)
+// async function getValue() {
+//   return parseInt(await app.call('value').toPromise(), 10)
+// }
+
+async function getIdentifiers() {
+  return await app.call("_identifiers").toPromise()
+}
+
+async function getName() {
+  value = await app.call('_name').toPromise()
+  return value
 }

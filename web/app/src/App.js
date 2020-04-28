@@ -17,7 +17,7 @@ import styled from 'styled-components'
 
 function App() {
   const { api, appState, path, requestPath } = useAragonApi()
-  const { count, isSyncing } = appState
+  const { name, isSyncing } = appState
 
   const pathParts = path.match(/^\/tab\/([0-9]+)/)
   const pageIndex = Array.isArray(pathParts)
@@ -28,19 +28,19 @@ function App() {
     <Main>
       {isSyncing && <SyncIndicator />}
       <Header
-        primary="Counter"
+        primary="Arisaedo"
         secondary={
           <Text
             css={`
               ${textStyle('title2')}
             `}
           >
-            {count}
+            {name}
           </Text>
         }
       />
       <Tabs
-        items={['Tab 1', 'Tab 2']}
+        items={['Governance', 'Upload']}
         selected={pageIndex}
         onChange={index => requestPath(`/tab/${index + 1}`)}
       />
@@ -54,7 +54,7 @@ function App() {
           ${textStyle('title3')};
         `}
       >
-        Count: {count}
+        Name: {"covid"}
         <Buttons>
           <Button
             display="icon"

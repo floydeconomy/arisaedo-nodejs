@@ -28,7 +28,7 @@ module.exports = {
     clientServePort: 3000,
     appSrcPath: 'app/',
     appBuildOutputPath: 'dist/',
-    appName: 'web',
+    appName: 'Arisaedo',
     hooks, // Path to script hooks
   },
 }
